@@ -1,0 +1,194 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+body {
+  background: #fafafa;
+  color: #444;
+  font-family: 'Open Sans', Arial;
+  font-size: 12pt;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+a, a:visited {
+  color: #3F51B5;
+}
+
+a:hover, a:focus {
+  color: #1A237E;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+/*nav {
+  background: #eaeaea;
+  left: 5px;
+  padding: 20px;
+  position: fixed;
+  top: 5px;
+}*/
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.dt {
+  font-weight: 400;
+}
+
+.dd {
+  margin-bottom: 12px;
+  margin-left: 0;
+}
+
+.list {
+  background: #303030;
+  display: flex;
+}
+
+.list--inline {
+  display: inline-flex;
+}
+
+.list__item {
+  background: #3F51B5;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+}
+
+.list__item--highlight {
+  background: #F44336;
+}
+
+.list--row-reverse {
+  flex-direction: row-reverse;
+}
+
+.list--col {
+  flex-direction: column;
+}
+
+.list--col-reverse {
+  flex-direction: column-reverse;
+}
+
+.list--wrap {
+  flex-wrap: wrap;
+}
+
+.list--wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.list--flow-reverse {
+  flex-flow: row-reverse wrap-reverse;
+}
+
+.list--justify-end {
+  justify-content: flex-end;
+}
+
+.list--justify-center {
+  justify-content: center;
+}
+
+.list--justify-around {
+  justify-content: space-around;
+}
+
+.list--justify-between {
+  justify-content: space-between;
+}
+
+.list--items {
+  height: 240px;
+}
+
+.list--items-start {
+  align-items: flex-start;
+}
+
+.list--items-end {
+  align-items: flex-end;
+}
+
+.list--items-baseline {
+  align-items: baseline;
+}
+
+.list--items-center {
+  align-items: center;
+}
+
+.list--content-start {
+  align-content: flex-start;
+}
+
+.list--content-end {
+  align-content: flex-end;
+}
+
+.list--content-center {
+  align-content: center;
+}
+
+.list--content-around {
+  align-content: space-around;
+}
+
+.list--content-between {
+  align-content: space-between;
+}
+
+.list__item--align-start {
+  align-self: flex-start;
+}
+
+.list__item--align-end {
+  align-self: flex-end;
+}
+
+.list__item--align-baseline {
+  align-self: baseline;
+}
+
+.list__item--align-stretch {
+  align-self: stretch;
+}

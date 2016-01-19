@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flexbox Playground</title>
+  <link rel="stylesheet" href="app.css" />
+<head>
+
+<body>
+  <main>
+    <h1>Flexbox Playground</h1>
+
+    <section id="terminology">
+      <h2>Terminology</h2>
+      <dl>
+        <dt class="dt">main axis</dt>
+        <dd class="dd">the axis along which flex items are laid out - horizontal or vertical</dd>
+        <dt class="dt">main-start | main-end</dt>
+        <dd class="dd">the points at which flex items begin and end on the main axis</dd>
+        <dt class="dt">main size</dt>
+        <dd class="dd">a flex item's size - width if the main axis is horizontal, height if the main axis is vertical</dd>
+        <dt class="dt">cross axis</dt>
+        <dd class="dd">the axis perpendicular to the main axis</dd>
+        <dt class="dt">cross-start | cross-end</dt>
+        <dd class="dd">the points at which flex items begin and end on the cross axis</dd>
+        <dt class="dt">cross size</dt>
+        <dd class="dd">a flex item's size - width if the cross axis is horizontal, height if the cross axis is vertical</dd>
+      </dl>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <ul>
+        <li>Chrome 29+ <small>(21+ with -webkit-)</small></li>
+        <li>Safari 9+ <small>(7.1+ with -webkit-)</small></li>
+        <li>Firefox 28+</li>
+        <li>IE 11+</li>
+        <li>IE 10+ <small>(display: flexbox;)</small></li>
+        <li>iOS 9.2+ <small>(7.1+ with -webkit-)</small></li>
+        <li>Android 4.4+</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Container</h2>
+
+      <section id="display">
+        <h3>display</h3>
+        <p>Defines an element that will contain flex items.</p>
+        <ul>
+          <li><a href="#display-flex">flex</a></li>
+          <li><a href="#display-inline-flex">inline-flex</a></li>
+        </ul>
+
+        <h4 id="display-flex">display: flex</h4>
+        <ul class="list">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+
+        <h4 id="display-inline-flex">display: inline-flex</h4>
+        <ul class="list list--inline">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+      </section>
+
+      <section id="flex-direction">
+        <h3>flex-direction</h3>
+        <p>Defines the main display axis and direction.</p>
+        <ul>
+          <li><a href="#flex-direction-row">row (default)</a></li>
+          <li><a href="#flex-direction-row-reverse">row-reverse</a></li>
+          <li><a href="#flex-direction-col">column</a></li>
+          <li><a href="#flex-direction-col-reverse">column-reverse</a></li>
+        </ul>
+
+        <h4 id="flex-direction-row">flex-direction: row</h4>
+        <ul class="list">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+
+        <h4 id="flex-direction-row-reverse">flex-direction: row-reverse</h4>
+        <ul class="list list--row-reverse">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+
+        <h4 id="flex-direction-col">flex-direction: column</h4>
+        <ul class="list list--col">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+
+        <h4 id="flex-direction-col-reverse">flex-direction: column-reverse</h4>
+        <ul class="list list--col-reverse">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+      </section>
+
+      <section id="flex-wrap">
+        <h3>flex-wrap</h3>
+        <p>Defines whether all items must sit on a single flex line or can wrap onto another line.</p>
+        <p>By default, flex items will sit on a single flex line ignoring coded widths.</p>
+        <ul>
+          <li><a href="#flex-wrap-no">nowrap (default)</a></li>
+          <li><a href="#flex-wrap-wrap">wrap</a></li>
+          <li><a href="#flex-wrap-reverse">wrap-reverse</a></li>
+        </ul>
+
+        <h4 id="flex-wrap-no">flex-wrap: nowrap</h4>
+        <ul class="list">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="flex-wrap-wrap">flex-wrap: wrap</h4>
+        <ul class="list list--wrap">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="flex-wrap-reverse">flex-wrap: wrap-reverse</h4>
+        <ul class="list list--wrap-reverse">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+      </section>
+
+      <section id="flex-flow">
+        <h3>flex-flow</h3>
+        <p>Shorthand for flex-direction and flex-wrap.</p>
+
+        <h4>flex-flow: row-reverse wrap-reverse</h4>
+        <ul class="list list--flow-reverse">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+      </section>
+
+      <section id="justify-content">
+        <h3>justify-content</h3>
+        <p>Justifies flex items on the main axis.</p>
+        <ul>
+          <li><a href="#justify-content-start">flex-start (default)</a></li>
+          <li><a href="#justify-content-end">flex-end</a></li>
+          <li><a href="#justify-content-center">center</a></li>
+          <li><a href="#justify-content-around">space-around</a></li>
+          <li><a href="#justify-content-between">space-between</a></li>
+        </ul>
+
+        <h4 id="justify-content-start">justify-content: flex-start</h4>
+        <ul class="list">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+        </ul>
+
+        <h4 id="justify-content-end">justify-content: flex-end</h4>
+        <ul class="list list--justify-end">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+        </ul>
+
+        <h4 id="justify-content-center">justify-content: center</h4>
+        <ul class="list list--justify-center">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+        </ul>
+
+        <h4 id="justify-content-around">justify-content: space-around</h4>
+        <ul class="list list--justify-around">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+        </ul>
+
+        <h4 id="justify-content-between">justify-content: space-between</h4>
+        <ul class="list list--justify-between">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+        </ul>
+      </section>
+
+      <section id="align-items">
+        <h3>align-items</h3>
+        <p>Aligns flex items on the cross axis.</p>
+        <ul>
+          <li><a href="#align-items-stretch">stretch (default)</a></li>
+          <li><a href="#align-items-flex-start">flex-start</a></li>
+          <li><a href="#align-items-flex-end">flex-end</a></li>
+          <li><a href="#align-items-baseline">baseline</a></li>
+          <li><a href="#align-items-center">center</a></li>
+        </ul>
+
+        <h4 id="align-items-stretch">align-items: stretch???</h4>
+        <ul class="list list--items">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-items-flex-start">align-items: flex-start</h4>
+        <ul class="list list--items list--items-start">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-items-flex-end">align-items: flex-end</h4>
+        <ul class="list list--items list--items-end">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-items-baseline">align-items: baseline</h4>
+        <ul class="list list--items list--items-baseline">
+          <li class="list__item" style="font-size:2em;padding:20px 0;">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-items-center">align-items: center</h4>
+        <ul class="list list--items list--items-center">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+      </section>
+
+      <section id="align-content">
+        <h3>align-content</h3>
+        <p>Justifies flex lines when there is extra space in the cross-axis, similar to how justify-content works on the main axis.</p>
+        <ul>
+          <li><a href="#align-content-stretch">stretch (default)</a></li>
+          <li><a href="#align-content-flex-start">flex-start</a></li>
+          <li><a href="#align-content-flex-end">flex-end</a></li>
+          <li><a href="#align-content-center">center</a></li>
+          <li><a href="#align-content-around">space-around</a></li>
+          <li><a href="#align-content-between">space-between</a></li>
+        </ul>
+
+        <h4 id="align-content-stretch">flex-flow: row wrap & align-content: stretch</h4>
+        <ul class="list list--items">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+          <li class="list__item">5</li>
+          <li class="list__item">6</li>
+          <li class="list__item">7</li>
+          <li class="list__item">8</li>
+        </ul>
+
+        <h4 id="align-content-flex-start">flex-flow: row wrap & align-content: flex-start</h4>
+        <ul class="list list--items list--wrap list--content-start">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+          <li class="list__item">5</li>
+          <li class="list__item">6</li>
+          <li class="list__item">7</li>
+          <li class="list__item">8</li>
+        </ul>
+
+        <h4 id="align-content-flex-end">flex-flow: row wrap & align-content: flex-end</h4>
+        <ul class="list list--items list--wrap list--content-end">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+          <li class="list__item">5</li>
+          <li class="list__item">6</li>
+          <li class="list__item">7</li>
+          <li class="list__item">8</li>
+        </ul>
+
+        <h4 id="align-content-center">flex-flow: row wrap & align-content: center</h4>
+        <ul class="list list--items list--wrap list--content-center">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+          <li class="list__item">5</li>
+          <li class="list__item">6</li>
+          <li class="list__item">7</li>
+          <li class="list__item">8</li>
+        </ul>
+
+        <h4 id="align-content-around">flex-flow: row wrap & align-content: space-around</h4>
+        <ul class="list list--items list--wrap list--content-around">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+          <li class="list__item">5</li>
+          <li class="list__item">6</li>
+          <li class="list__item">7</li>
+          <li class="list__item">8</li>
+        </ul>
+
+        <h4 id="align-content-between">flex-flow: row wrap & align-content: space-between</h4>
+        <ul class="list list--items list--wrap list--content-between">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+          <li class="list__item">5</li>
+          <li class="list__item">6</li>
+          <li class="list__item">7</li>
+          <li class="list__item">8</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h2>Items</h2>
+
+      <section id="order">
+        <h3>order</h3>
+        <p>Explicitly set the order of each item.</p>
+
+        <h4>flex-direction: row & order: &lt;number&gt;</h4>
+        <ul class="list">
+          <li class="list__item list__item--highlight" style="order:3;">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+
+        <h4>flex-direction: column & order: &lt;number&gt;</h4>
+        <ul class="list list--col">
+          <li class="list__item list__item--highlight" style="order:3;">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+      </section>
+
+      <section id="flex-grow">
+        <h3>flex-grow</h3>
+        <p>Defines the proportion by which an item can grow relative to other items when free space is distributed.</p>
+        <p>Default is 0.</p>
+
+        <h4>flex-grow: 1</h4>
+        <ul class="list">
+          <li class="list__item list__item--highlight" style="flex-grow:1;">1</li>
+          <li class="list__item">2</li>
+        </ul>
+      </section>
+
+      <section id="flex-shrink">
+        <h3>flex-shrink</h3>
+        <p>Defines the proportion by which an item can shrink relative to other items when no free space can be distributed.</p>
+        <p>Default is 1.</p>
+
+        <h4>flex-shrink: 10</h4>
+        <ul class="list">
+          <li class="list__item list__item--highlight" style="flex-shrink:10;">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+      </section>
+
+      <section id="flex-basis">
+        <h3>flex-basis</h3>
+        <p>Defines the initial size of a flex item before free space is distributed.</p>
+
+        <h4 id="flex-basis-auto">flex-basis: auto</h4>
+        <ul class="list">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+
+        <h4 id="flex-basis-length">flex-basis: 500px</h4>
+        <ul class="list">
+          <li class="list__item list__item--highlight" style="flex-basis:500px;">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+      </section>
+
+      <section id="flex">
+        <h3>flex</h3>
+        <p>Shorthand for flex-grow, flex-shrink and flex-basis.</p>
+        
+        <h4>flex: 0 1 auto (default)</h4>
+        <ul class="list">
+          <li class="list__item">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+        </ul>
+      </section>
+
+      <section id="align-self">
+        <h3>align-self</h3>
+        <p>Allows align-items to be overridden per item.</p>
+        <ul>
+          <li><a href="#align-self-auto">auto (default)</a></li>
+          <li><a href="#align-self-flex-start">flex-start</a></li>
+          <li><a href="#align-self-flex-end">flex-end</a></li>
+          <li><a href="#align-self-center">center</a></li>
+          <li><a href="#align-self-baseline">baseline</a></li>
+          <li><a href="#align-self-stretch">stretch</a></li>
+        </ul>
+
+        <h4 id="align-self-auto">align-items: center & align-self: auto</h4>
+        <ul class="list list--items list--items-center">
+          <li class="list__item list__item--highlight">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-self-flex-start">align-items: center & align-self: flex-start</h4>
+        <ul class="list list--items list--items-center">
+          <li class="list__item list__item--highlight list__item--align-start">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-self-flex-end">align-items: center & align-self: flex-end</h4>
+        <ul class="list list--items list--items-center">
+          <li class="list__item list__item--highlight list__item--align-end">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-self-center">align-items: center & align-self: center</h4>
+        <ul class="list list--items list--items-center">
+          <li class="list__item list__item--highlight list__item--align-center">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-self-baseline">align-items: center & align-self: baseline</h4>
+        <ul class="list list--items list--items-center">
+          <li class="list__item list__item--highlight list__item--align-baseline">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+
+        <h4 id="align-self-stretch">align-items: center & align-self: stretch</h4>
+        <ul class="list list--items list--items-center">
+          <li class="list__item list__item--highlight list__item--align-stretch">1</li>
+          <li class="list__item">2</li>
+          <li class="list__item">3</li>
+          <li class="list__item">4</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="resources">
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://www.w3.org/TR/css-flexbox/#box-model">W3C Flexbox Model Spec</a></li>
+        <li><a href="http://caniuse.com/#feat=flexbox">caniuse</a></li>
+        <li><a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties">scotch.io</a></li>
+        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks</a></li>
+        <li><a href="http://tympanus.net/codrops/css_reference/flexbox/">Codrops CSS Reference</a></li>
+      </ul>
+  </main>
+</body>
+</html>
